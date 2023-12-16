@@ -42,7 +42,13 @@ class MyApp extends StatelessWidget {
               child: Container(
                 height: 300,
                 width: 300,
-                padding: EdgeInsets.only(bottom: 200),
+                padding: const EdgeInsets.only(bottom: 200),
+                decoration: const BoxDecoration(
+                  color: Colors.green,
+                  image: DecorationImage(fit: BoxFit.cover,
+                    image: NetworkImage('https://images.pexels.com/photos/821652/pexels-photo-821652.jpeg?auto=compress&cs=tinysrgb&w=1200')
+                  )
+                ),
                 // margin: EdgeInsets.only(left: 45,top: 150),
                 // decoration: BoxDecoration(
                 //     color: Colors.red.shade400,
@@ -59,12 +65,6 @@ class MyApp extends StatelessWidget {
                 //     ],
                 //     border: Border.all(color: Colors.green, width: 8)),
                 child:  Center( child: Text('Flutter Dev',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight:FontWeight.bold),)),
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  image: DecorationImage(fit: BoxFit.cover,
-                    image: NetworkImage('https://images.pexels.com/photos/821652/pexels-photo-821652.jpeg?auto=compress&cs=tinysrgb&w=1200')
-                  )
-                ),
               ),
             ),
           ],
