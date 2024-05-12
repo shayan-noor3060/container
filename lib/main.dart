@@ -9,66 +9,72 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.grey,
-          title: const Center(
-            child: Text(
-              'Container',
-              style: TextStyle(fontSize: 27, fontWeight: FontWeight.w500),
-            ),
-          ),
-        ),
-        drawer: const Drawer(
-          backgroundColor: Colors.black12,
-          child: Column(
-            children: [
-
-            ],
-          ),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
-              child: Container(
-                height: 300,
-                width: 300,
-                // transform: Matrix4.rotationZ(6),
-                padding: const EdgeInsets.only(bottom: 200),
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  image: DecorationImage(fit: BoxFit.cover,
-                    image: NetworkImage('https://images.pexels.com/photos/821652/pexels-photo-821652.jpeg?auto=compress&cs=tinysrgb&w=1200')
-                  )
-                ),
-                // margin: EdgeInsets.only(left: 45,top: 150),
-                // decoration: BoxDecoration(
-                //     color: Colors.red.shade400,
-                //     borderRadius: const BorderRadius.only(
-                //         topLeft: Radius.circular(50),
-                //         bottomRight: Radius.circular(50),
-                //         topRight: Radius.circular(20),
-                //         bottomLeft: Radius.circular(20)),
-                //     boxShadow: const  [
-                //       BoxShadow(
-                //           blurRadius: 80,
-                //           spreadRadius: 50,
-                //           color: Colors.yellow),
-                //     ],
-                //     border: Border.all(color: Colors.green, width: 8)),
-                child:  Center( child: Text('Flutter Dev',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight:FontWeight.bold),)),
+      home: Container(
+        decoration: const BoxDecoration(
+            color: Colors.green,
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Color(0XFFfc03ba), Color(0XFF0362fc)])),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            title: const Center(
+              child: Text(
+                'Container',
+                style: TextStyle(fontSize: 37, fontWeight: FontWeight.bold,fontFamily:'Josefin Sans', ),
               ),
             ),
-          ],
+          ),
+          drawer: Container(
+            decoration: const BoxDecoration(
+                color: Colors.green,
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Color(0XFFfc03ba), Color(0XFF0362fc)])),
+            child: const Drawer(
+              backgroundColor: Colors.transparent,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Icon(Icons.cabin)
+                ],
+              ),
+            ),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Container(
+                  height: 300,
+                  width: 300,
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(60),
+                      gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [Color(0XFF6bfc03), Color(0XFF03f8fc)])),
+                  child: const Center(
+                      child: Text(
+                    'Flutter Dev',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      fontFamily: 'Josefin Sans',
+                    ),
+                  )),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
